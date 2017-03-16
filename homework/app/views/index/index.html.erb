@@ -1,0 +1,42 @@
+<!-- Main Page -->
+<div class="container-fluid noPadding">
+  <div class="container-fluid headpicture">
+    <%= image_tag 'header.jpg', :size => '1400x600' %>
+  </div>
+	<div class="container text-center">
+	  <h1>Ruby 初学者向けアプリケーション</h1>
+		<p class="textStyle">
+		  このアプリケーションでは，３つの機能を提供します．<br /><br />
+      コードチェックでは，変数名やネストの深さなどの観点から Ruby コードのリファクタリングについてヒントを与えます．<br /><br />
+      バイトコード化では，Ruby VM である，YARV 命令列を表示します．Ruby は，オープンソースであるため VM の構造を知ることはコミッターへの道です．<br /><br />
+      技術ブログは，レコメンド機能を搭載しています．Ruby 以外の知識も吸収しましょう．
+		</p>
+
+		<h1>Services</h1>
+	</div>
+	<div class="container textstyle">
+		<div class="row text-center latestProjects">
+			<div class="col-md-4 col-sm-6">
+				<%= image_tag 'refac.jpg', :size => '200x260' %>
+				<p>コードチェック<%= link_to 'learn more →',code_check_path %></p>
+			</div>
+
+			<div class="col-md-4 col-sm-6">
+        <%= image_tag 'byte.jpg', :size => '200x260' %>
+				<p>バイトコード化<%= link_to 'learn more →',yarv_path %></p>
+			</div>
+
+			<div class="col-md-4 col-sm-12">
+				<%= image_tag 'code.jpg', :size => '200x260' %>
+				<p>技術ブログ<%= link_to 'learn more →',random_path %></p>
+			</div>
+        <%= image_tag 'ruby.jpg', :size => '260x260' %>
+		</div>
+	</div>
+</div>
+<!-- Footer -->
+<div class="container footer">
+  <div class="col-xs-12 col-md-8 noPadding">
+    <p id="footerLogoText">Created by <%= link_to 'shaw','https://github.com/shawkoike/' %></p>
+  </div>
+</div>

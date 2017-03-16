@@ -1,0 +1,26 @@
+<!-- Main Page -->
+<!-- <div class="container-fluid noPadding"> -->
+<div class = "code">
+	<div class="result">
+	  <h1>コードチェック</h1>
+		<p>下のボックスに Ruby コードを入力し，完了ボタンを押してください．</p>
+    <!-- <%= text_area_tag :code,"",size:"90x30" %><br />
+    <%= submit_tag "完了",class:"btn btn-primary btn-lg top-btn",:name => 'sub' %>
+    <%= link_to '次',code_checked_path %> -->
+    <%= form_tag '/code_check', method: :get, class: "" do %>
+      <!-- <%= label_tag 'name', 'キーワード：' %> -->
+      <!-- <%= text_field_tag :search, params[:search],size:"90x30" %> -->
+      <%= text_area_tag :code,params[:code],size:"90x30" %><br />
+      <%= submit_tag '完了',class:"btn btn-primary btn-lg top-btn" %>
+    <% end %>
+    <br /><hr>
+	</div>
+	<% if @msg %>
+  	<div class = "result">
+    	<h1><%= @title %></h1>
+    	<% @msg.each do |message|%>
+      	<p><%= message %></p>
+    	<% end %>
+  	</div>
+	<% end %>
+</div>

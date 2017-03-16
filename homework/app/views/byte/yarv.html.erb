@@ -1,0 +1,26 @@
+<!-- Main Page -->
+<!-- <div class="container-fluid noPadding"> -->
+<div class = "code">
+	<div class="result">
+	  <h1>YARV</h1>
+		<p>下のボックスに Ruby コードを入力し，完了ボタンを押してください．</p>
+    <!-- <%= text_area_tag :code,"",size:"90x30" %><br />
+    <%= submit_tag "完了",class:"btn btn-primary btn-lg top-btn",:name => 'sub' %>
+    <%= link_to '次',code_checked_path %> -->
+    <%= form_tag '/byte_yarv', method: :get, class: "" do %>
+      <!-- <%= label_tag 'name', 'キーワード：' %> -->
+      <!-- <%= text_field_tag :search, params[:search],size:"90x30" %> -->
+      <%= text_area_tag :yarv,params[:yarv],size:"90x30" %><br />
+      <%= submit_tag '完了',class:"btn btn-primary btn-lg top-btn" %>
+    <% end %>
+    <br /><hr>
+	</div>
+  <% if @code %>
+  	<div class = "result">
+    	<h1><%= @title %></h1>
+      <% @yarv.each do |line| %>
+        <p><%= line %></p>
+      <% end %>
+  	</div>
+	<% end %>
+</div>

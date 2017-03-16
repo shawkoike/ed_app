@@ -1,0 +1,32 @@
+<!-- Main Page -->
+<!-- <div class="container-fluid noPadding"> -->
+<div class = "code">
+	<div class="blog">
+    <h1>技術ブログ</h1>
+    <p>興味のある記事だった場合，リンク下の番号を入力し Good ボタンを押してください．</p>
+    <hr>
+    <% @display.each do |title,url| %>
+      <% num = @numbers.shift %>
+      <h3><%= link_to "#{title}","#{url}",:target=>["_blank"] %></h3>
+      <p>> <%= num %></p>
+      <hr>
+    <% end %>
+
+    <%= form_tag '/recommend', method: :get, class: "" do %>
+      <%= text_area_tag :blog_num,params[:blog_num] %>
+      <%= submit_tag "Good",class:"btn btn-primary btn-lg top-btn" %>
+    <% end %>
+
+    <% if @num %>
+      <h1><%= @num %></h1>
+    <% end %>
+    <br />
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="container_rand">
+    <br /><hr>
+    <p id="footerLogoText">Data from <%= link_to 'POSTD','http://postd.cc' %></p>
+  </div>
+</div>
