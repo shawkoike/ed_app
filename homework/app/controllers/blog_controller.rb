@@ -46,7 +46,7 @@ class BlogController < ApplicationController
   end
 
   def recommend
-    @num = params[:blog_num].to_i
+    @num = params[:blog_num].shift.to_i
     @display = Hash.new
     @numbers = Array.new
     titles = Array.new

@@ -8,17 +8,11 @@
     <% @display.each do |title,url| %>
       <% num = @numbers.shift %>
       <h3><%= link_to "#{title}","#{url}",:target=>["_blank"] %></h3>
-      <p>> <%= num %></p>
+			<%= form_tag '/recommend', method: :get, class: "" do %>
+				<%= hidden_field :blog_num,params[:blog_num],:value => "#{num}" %>
+	      <%= submit_tag "Good",class:"btn btn-primary btn-lg top-btn" %>
+	    <% end %>
       <hr>
-    <% end %>
-
-    <%= form_tag '/recommend', method: :get, class: "" do %>
-      <%= text_area_tag :blog_num,params[:blog_num] %>
-      <%= submit_tag "Good",class:"btn btn-primary btn-lg top-btn" %>
-    <% end %>
-
-    <% if @num %>
-      <h1><%= @num %></h1>
     <% end %>
     <br />
   </div>
